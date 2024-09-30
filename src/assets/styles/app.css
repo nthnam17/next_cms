@@ -1,0 +1,25 @@
+@import './components/login.css';
+
+body::-webkit-scrollbar,
+.custom-scroll::-webkit-scrollbar,
+.searchResult::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-thumb,
+.searchResult::-webkit-scrollbar-thumb {
+    background-color: #31264e;
+    border-radius: 10px;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spinner 1s linear infinite;
+}
