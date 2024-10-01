@@ -1,6 +1,10 @@
 import { Metadata } from 'next';
 import Login from '@/components/login/page';
-import { Box } from '@mui/material';
+import { Box, FormControl, TextField } from '@mui/material';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { TLogin } from '@/types/login';
+import LoginForm from '@/components/login/page';
 
 // export const metadata: Metadata = {
 //     title: 'Chill And Free 420 CMS',
@@ -9,10 +13,16 @@ import { Box } from '@mui/material';
 
 export default function LoginPage() {
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-mono)] bg_login">
-            <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-                <Box></Box>
-            </main>
+        <div className="flex items-center justify-center w-full h-full">
+            <div className="w-[600px] h-[800px] bg-background rounded-xl">
+                <div className="flex flex-col items-center justify-center">
+                    <Image src="/img/logo2x.png" width={200} height={200} alt="Logo website" />
+                    <h1 className="font-bold text-3xl text-primary text-shadow-cus">Đăng nhập CMS</h1>
+                </div>
+                <div>
+                    <LoginForm />
+                </div>
+            </div>
         </div>
     );
 }

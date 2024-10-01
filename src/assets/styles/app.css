@@ -23,3 +23,7 @@ body::-webkit-scrollbar-thumb,
 .spinner {
     animation: spinner 1s linear infinite;
 }
+
+.text-shadow-cus {
+    text-shadow: 3px 0px 3px #fff;
+}
