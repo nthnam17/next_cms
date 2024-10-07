@@ -3,11 +3,20 @@
 import { usePathname } from 'next/navigation';
 import Cookies from 'js-cookie';
 import '@/app/globals.css';
+import { useRouter } from 'next/navigation';
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
+    const router = useRouter();
     const pathname = usePathname();
+    const token = Cookies.get('accessToken');
 
-    if (pathname === '/login') {
+    if (token) {
+        router.push('/');
+    } else {
+        router.push('/login');
+    }
+
+    if ((pathname === '/login' && !token) || !token) {
         return <>{children}</>;
     }
 
